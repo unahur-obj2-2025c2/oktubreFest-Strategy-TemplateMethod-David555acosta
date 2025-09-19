@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2.marca;
+package ar.edu.unahur.obj2.marca.Marca;
 
 public class Negra extends Marca {
     /*

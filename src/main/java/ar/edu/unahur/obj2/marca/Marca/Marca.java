@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2.marca;
+package ar.edu.unahur.obj2.marca.Marca;
 
 public abstract class Marca {
     protected Integer lupulo;
@@ -22,5 +22,9 @@ public abstract class Marca {
 
     public Double graduacion() {
         return graduacionReglamentaria;
+    }
+
+    public Integer getLupulo() {
+        return lupulo;
     }
 }
