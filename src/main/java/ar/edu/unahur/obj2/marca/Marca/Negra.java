@@ -9,17 +9,4 @@ public class Negra extends Marca {
      * lasmarcas de cerveza negra del mundo; puede cambiar con el tiempo.
      */
 
-     
-    
-
-    public Negra(Integer lupulo, String paisDeFabrica, Double contenidoLitros, String nombre) {
-        super(lupulo, paisDeFabrica, contenidoLitros, nombre);
-        //TODO Auto-generated constructor stub
-    }
-
-    @Override
-    public Double graduacion() {
-        return Math.min(graduacionReglamentaria,lupulo);
-    }
-
 }

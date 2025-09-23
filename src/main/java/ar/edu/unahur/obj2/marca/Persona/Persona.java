@@ -13,27 +13,5 @@ public class Persona {
 
     //Además, de cada persona interesará saber qué marcas de cerveza le gustan. Se sabe que a los belgas les gusta
     // solamente la cerveza con más de 4 gramos de lúpulo por litro, a los checos les gustan las cervezas de más de 8 %
-    // de graduación (ver abajo qué es la graduación de la cerveza), a los alemanes les gustan todas.
-
-
-    private Integer peso;
-    private List<Jarra> jarrasCompradas = new ArrayList<Jarra>();
-    private Boolean leGustaMusicaTradicional;
-    private Integer nivelAguante;
-
-    public Persona(Integer peso, List<Jarra> jarrasCompradas, Boolean leGustaMusicaTradicional, Integer nivelAguante) {
-        this.peso = peso;
-        this.jarrasCompradas = jarrasCompradas;
-        this.leGustaMusicaTradicional = leGustaMusicaTradicional;
-        this.nivelAguante = nivelAguante;
-    }
-
-    public boolean estaEbria() {
-        Double alcoholIngerido = jarrasCompradas.stream().mapToDouble(j -> j.getCapacidadLitros()).sum();
-        return alcoholIngerido * this.peso > this.nivelAguante;
-    }
-
-    public boolean leGustaCervezaX(Marca cerverza) {
-        return true;
-    }
+    // de graduación (ver abajo qué es la graduación de la cerveza), a los alemanes les gustan todas
 }

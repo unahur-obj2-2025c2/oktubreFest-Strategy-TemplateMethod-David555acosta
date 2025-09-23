@@ -5,17 +5,4 @@ import java.util.List;
 import ar.edu.unahur.obj2.marca.Jarra.Jarra;
 import ar.edu.unahur.obj2.marca.Marca.Marca;
 
-public class Belgas extends Persona {
-
-    public Belgas(Integer peso, List<Jarra> jarrasCompradas, Boolean leGustaMusicaTradicional, Integer nivelAguante) {
-        super(peso, jarrasCompradas, leGustaMusicaTradicional, nivelAguante);
-        //TODO Auto-generated constructor stub
-    }
-
-    @Override
-    public boolean leGustaCervezaX(Marca cerverza) {
-        // TODO Auto-generated method stub
-        return cerverza.getLupulo() > 4;
-    }
-
-}
+public class Belgas extends Persona {}
