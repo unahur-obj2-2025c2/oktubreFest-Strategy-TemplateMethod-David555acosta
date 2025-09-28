@@ -12,13 +12,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
-        <!-- Hace que tanto source como target sean iguales -->
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
     <dependencies>
-        <!-- Dependencia de JUnit 5 -->
+        <!-- JUnit 5 (versión actual) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -29,7 +28,7 @@
 
     <build>
         <plugins>
-            <!-- Plugin para compilar con la versión de Java indicada -->
+            <!-- Compilador -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -39,7 +38,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin Surefire para ejecutar tests -->
+            <!-- Plugin para correr tests JUnit 5 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -47,7 +46,6 @@
                 <configuration>
                     <forkCount>1</forkCount>
                     <reuseForks>true</reuseForks>
-                    <!-- Indicar que use JUnit Platform (5) -->
                     <includes>
                         <include>**/*Test.java</include>
                         <include>**/*Tests.java</include>
@@ -56,7 +54,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Jacoco para cobertura de código -->
+            <!-- JaCoCo para cobertura -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -79,5 +77,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
