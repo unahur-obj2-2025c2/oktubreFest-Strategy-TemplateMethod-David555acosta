@@ -7,13 +7,13 @@ public class Carpa {
     private Integer limite;
     private Boolean tienenBandaDeMusicaTradicionalo;
     private Marca marca;
-    private List<Persona> personas = new ArrayList<>();
+    private List<Persona> personas;
 
-    public Carpa(Integer limite, Boolean tienenBandaDeMusicaTradicionalo, Marca marca, List<Persona> personas) {
+    public Carpa(Integer limite, Boolean tienenBandaDeMusicaTradicionalo, Marca marca) {
         this.limite = limite;
         this.tienenBandaDeMusicaTradicionalo = tienenBandaDeMusicaTradicionalo;
         this.marca = marca;
-        this.personas = personas;
+        this.personas = new ArrayList<>();
     }
 
     public Integer getLimite() {
@@ -47,7 +47,9 @@ public class Carpa {
             throw new IllegalArgumentException("No se le puede servir una cerveza a alguien que no esta en la carpa");
         }
 
-        persona.recibirJarra(new Jarra(capacidadLitros, marca, this));
+        if (persona.leGustaEsteTipoDeCerveza(this.marca)) {
+            persona.recibirJarra(new Jarra(capacidadLitros, marca, this));
+        }
     }
 
     public Integer ebriosEmedernidos() {

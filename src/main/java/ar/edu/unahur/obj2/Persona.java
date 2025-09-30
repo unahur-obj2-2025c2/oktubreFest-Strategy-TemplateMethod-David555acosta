@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Persona {
     private Double peso;
-    private List<Jarra> jarras = new ArrayList<>();
+    private List<Jarra> jarras;
     private Boolean leGustaLamusicaTradicional;
     private Double nivelAguante;
     private Pais pais;
 
-    public Persona(Double peso, List<Jarra> jarras, Boolean leGustaLamusicaTradicional, Double nivelAguante,
+    public Persona(Double peso, Boolean leGustaLamusicaTradicional, Double nivelAguante,
             Pais pais) {
         this.peso = peso;
-        this.jarras = jarras;
+        this.jarras = new ArrayList<>();
         this.leGustaLamusicaTradicional = leGustaLamusicaTradicional;
         this.nivelAguante = nivelAguante;
         this.pais = pais;
