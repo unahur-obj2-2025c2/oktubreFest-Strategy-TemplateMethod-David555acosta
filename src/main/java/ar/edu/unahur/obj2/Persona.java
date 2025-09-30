@@ -68,7 +68,8 @@ public class Persona {
 
     public Boolean quiereEntrar(Carpa carpa) {
         return this.noEsAlemanaLeGustaLaCervezaYCoincidenEnMusica(carpa.getMarca(),
-                carpa.getTienenBandaDeMusicaTradicionalo());
+                carpa.getTienenBandaDeMusicaTradicionalo())
+                || restriccionesPersonaAlemana(carpa.totalPersonasEnCarpa());
     }
 
     public void recibirJarra(Jarra jarra) {

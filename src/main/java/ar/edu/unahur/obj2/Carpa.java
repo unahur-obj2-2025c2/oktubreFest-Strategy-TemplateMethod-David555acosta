@@ -28,6 +28,10 @@ public class Carpa {
         return marca;
     }
 
+    public Integer totalPersonasEnCarpa() {
+        return personas.size();
+    }
+
     public Boolean dejaIngresar(Persona persona) {
         return !persona.estaEbria() && personas.size() < this.limite;
     }
