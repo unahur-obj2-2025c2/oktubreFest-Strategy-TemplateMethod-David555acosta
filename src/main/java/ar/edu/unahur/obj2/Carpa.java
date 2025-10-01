@@ -42,7 +42,7 @@ public class Carpa {
         }
     }
 
-    public void servirJarra(Persona persona, Double capacidadLitros, Marca marca, Carpa carpa) {
+    public void servirJarra(Persona persona, Double capacidadLitros, Marca marca) {
         if (!personas.contains(persona)) {
             throw new IllegalArgumentException("No se le puede servir una cerveza a alguien que no esta en la carpa");
         }

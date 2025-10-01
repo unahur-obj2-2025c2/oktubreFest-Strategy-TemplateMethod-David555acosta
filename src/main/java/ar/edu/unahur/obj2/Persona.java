@@ -39,6 +39,10 @@ public class Persona {
         return leGustaLamusicaTradicional;
     }
 
+    public Double totalIngerido() {
+        return jarras.stream().mapToDouble(j -> j.getCapacidadEnLitros()).sum();
+    }
+
     public Boolean estaEbria() {
         Double totalIngerido = jarras.stream().mapToDouble(j -> j.getCapacidadEnLitros()).sum();
         return totalIngerido * this.peso > this.nivelAguante;
@@ -85,32 +89,25 @@ public class Persona {
         return jarras.stream().allMatch(j -> j.getMarca().equals(referencia.getMarca()));
     }
 
-    public Integer coincidencias(Persona persona) {
-        Integer cant = 0;
-        for (Jarra jarra : jarras) {
-            for (Jarra jarra2 : persona.getJarras()) {
-                if (jarra.equals(jarra2)) {
-                    cant += 1;
-                }
-            }
-        }
-        return cant;
-    }
-
-    public Integer diferencias(Persona persona) {
-        Integer cant = 0;
-        for (Jarra jarra : jarras) {
-            for (Jarra jarra2 : persona.getJarras()) {
-                if (jarra.equals(jarra2)) {
-                    cant += 1;
-                }
-            }
-        }
-        return cant;
-    }
-
     public Boolean sonCompatibles(Persona persona) {
-        return coincidencias(persona) > diferencias(persona);
+        int coincidencias = 0;
+        int diferencias = 0;
+
+        for (Jarra jarra : jarras) {
+            boolean coincide = false;
+            for (Jarra jarra2 : persona.getJarras()) {
+                if (jarra.getMarca().equals(jarra2.getMarca())) {
+                    coincidencias++;
+                    coincide = true;
+                    break; // ya encontraste coincidencia, no hace falta seguir buscando
+                }
+            }
+            if (!coincide) {
+                diferencias++;
+            }
+
+        }
+        return coincidencias > diferencias;
     }
 
     public List<Carpa> carpasQueSirviceronCerveza() {
